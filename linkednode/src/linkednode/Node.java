@@ -2,15 +2,18 @@ package linkednode;
 
 
 public class Node {
-	 String name;
+	String type="ID Block";
+	 String info;
 	 Node left;
 	 Node right;
+	 Node prev;
 
+	 Node(){};
 	 Node(String dat){
-	 	this.name=dat;
+	 	this.info=dat;
 	 }
 	 public String getData() {
-		return name;
+		return info;
 	}
 	 public void converttocode(){
 		 

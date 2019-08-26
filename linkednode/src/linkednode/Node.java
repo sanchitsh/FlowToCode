@@ -1,6 +1,8 @@
 package linkednode;
 
 
+import java.io.PrintWriter;
+
 public class Node {
 	String type="ID Block";
 	 String info;
@@ -15,7 +17,7 @@ public class Node {
 	 public String getData() {
 		return info;
 	}
-	 public void converttocode(){
+	 public void converttocode(PrintWriter p){
 		 
 	 }
 	 

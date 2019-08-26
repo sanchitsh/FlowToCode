@@ -11,9 +11,9 @@ public class ConditionalBlock extends Node {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void converttocode(PrintWriter outloc,String condition) throws FileNotFoundException{
-	
-		outloc.write("\n"+"if("+condition+")");
+	public void converttocode(PrintWriter outloc){
+
+		outloc.write("\n"+"if("+info+")");
 	}
 
 }

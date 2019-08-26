@@ -1,20 +1,27 @@
 package linkednode;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class linkedtrees {
+    private Node head;private Node curnode;
+    private ArrayList<Node> x;
+    private PrintWriter p;
+
     linkedtrees(){
         StartNode s=new StartNode("Start");
         this.head=s;
     }
-   Node head;Node curnode;
-   ArrayList<Node> x;
+  public void setPrintWriter(PrintWriter p){
+        this.p=p;
+  }
+
  private void writeSP(Node node)
  {
 		if(node==null)
 		return;
-		node.converttocode();
+		node.converttocode(p);
 		System.out.print(node.info+"	");
 		writeSP(node.left);
 		writeSP(node.right);

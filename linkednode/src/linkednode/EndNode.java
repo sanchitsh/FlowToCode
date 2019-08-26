@@ -13,6 +13,10 @@ public class EndNode extends Node {
 
     public void converttocode(PrintWriter loc)
     {
-        loc.write("}}");
+
+        loc.write("}");
+        loc.println();
+        loc.write("}");
+        loc.close();
     }
 }

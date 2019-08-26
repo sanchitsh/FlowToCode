@@ -9,17 +9,13 @@ public class Outputblock extends Node {
 		// TODO Auto-generated constructor stub
 	}
 
-	PrintWriter location; String output;
 	
-	
-	public void writestring(String output){
-		this.output=output;	
-	}
+
 	
 	public void converttocode(PrintWriter loc)
 	{
-		this.location=loc;
-		location.write("System.out.println("+this.output+");");
+		loc.write("System.out.println("+info+");");
+		loc.println();
 	}
 
 }

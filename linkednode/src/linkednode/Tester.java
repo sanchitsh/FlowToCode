@@ -1,6 +1,8 @@
 package linkednode;
 
 import javax.swing.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,9 +15,15 @@ public class Tester {
 	Node currNode;
 //LEFT==0, Right==1
 
-	public void insertNode() {
+	public void insertNode() throws FileNotFoundException {
 
 		ArrayList<Node>spnodes=new ArrayList<Node>();
+		File f=new File("CodeForFlow.java");
+		System.out.println("Please enter the location you want to store the code at OR press the return key to store files this lib");
+		String loca=scan.nextLine();
+		if(!loca.equals("")){ f=new File(loca+"CodeForFlow.java");}
+		PrintWriter p =new PrintWriter(f);
+		l.setPrintWriter(p);
 		while(ender==0) {
 		spnodes=l.specialNode();
 			System.out.println("Listed below will be the blocks that are not connected to other blocks");
@@ -25,6 +33,7 @@ public class Tester {
 			Node chosenOne= spnodes.get(id);
 			addBlocks(chosenOne);
 			System.out.println("Node added!");
+            l.write();
 		}
 
 
@@ -54,7 +63,7 @@ public class Tester {
 				scan.nextLine();
 				char io = scan.nextLine().charAt(0);
 				if (io == 'i') {
-
+                    System.out.println();
 
 				} else if (io == 'o') {
 					System.out.println("Enter the output you want to display");

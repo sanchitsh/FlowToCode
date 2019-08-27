@@ -22,7 +22,7 @@ public class linkedtrees {
 		if(node==null)
 		return;
 		node.converttocode(p);
-		System.out.print(node.info+"	");
+		//System.out.print(node.info+"	");
 		writeSP(node.left);
 		writeSP(node.right);
 
@@ -82,7 +82,7 @@ public void InsertAfter(Node prev_Node, Node new_node, int leftright){
     }
    }
    curnode=new_node;
-	System.out.println("Current Node is +"+curnode.info);
+	//System.out.println("Current Node is +"+curnode.info);
 }
 }
 

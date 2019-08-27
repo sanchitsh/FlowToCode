@@ -4,7 +4,7 @@ package linkednode;
 import java.io.PrintWriter;
 
 public class Node {
-	String type="ID Block";
+	String type="1D";
 	 String info;
 	 Node left;
 	 Node right;

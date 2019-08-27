@@ -35,7 +35,7 @@ private void specialNodeCheck(Node node){
     if(node==null) {
         return;
     }
-    if(node.type.equals("NA")) {
+    if(!node.type.equals("1D")) {
         if (node.left == null || node.right == null) {
             x.add(node);
         }
@@ -77,6 +77,9 @@ public void InsertAfter(Node prev_Node, Node new_node, int leftright){
    }
    if(leftright==1){
    	prev_Node.right=new_node;
+   	if(!prev_Node.type.equals("1D")){
+   	    new_node.info="else{    "+new_node.info;
+    }
    }
    curnode=new_node;
 	System.out.println("Current Node is +"+curnode.info);

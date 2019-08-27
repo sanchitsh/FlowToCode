@@ -13,7 +13,6 @@ public class ProcessBlock extends Node{
 
 		location.write(info);
 		location.println();
-		location.close();
 	}
 
 }

@@ -13,7 +13,7 @@ public class ConditionalBlock extends Node {
 
 	public void converttocode(PrintWriter outloc){
 
-		outloc.write("\n"+"if("+info+")");
+		outloc.write("if("+info+") {");
 	}
 
 }

@@ -33,21 +33,22 @@ public class Tester {
 			Node chosenOne= spnodes.get(id);
 			addBlocks(chosenOne);
 			System.out.println("Node added!");
-            l.write();
 		}
 
 
 
 	}
 	public void addBlocks(Node n){
-		//scan = new Scanner(System.in);
 		System.out.println("1 : Process Block, 2 : I/O Block, 3 : Decision Block, 4 : End Block");
 		int choice = scan.nextInt();
+		scan.nextLine();
+		System.out.println("Press y, if this will be the last block in the conditional statement branch OR press return");
+		String c=scan.nextLine();
 		switch (choice) {
 			case 1: {
 				System.out.println("Enter the process you want to execute. Make sure this process is one line of code");
-				scan.nextLine();
 				String process = scan.nextLine();
+				if(c.equals("y"))process=process+"	}";
 				ProcessBlock x = new ProcessBlock(process);
 				System.out.println("If You are adding this Block to a specific branch(left or right), please enter the branch number(0 or 1), otherwise just press the return key");
 				String s=scan.nextLine();
@@ -60,7 +61,6 @@ public class Tester {
 			break;
 			case 2: {
 				System.out.println("Do you want input or output?(i: input or o:output)");
-				scan.nextLine();
 				char io = scan.nextLine().charAt(0);
 				if (io == 'i') {
                     System.out.println();
@@ -68,6 +68,7 @@ public class Tester {
 				} else if (io == 'o') {
 					System.out.println("Enter the output you want to display");
 					String otpt = scan.nextLine();
+					if(c.equals("y"))otpt=otpt+"	}";
 					Outputblock o = new Outputblock(otpt);
 					//		l.inserthead(o);
 					System.out.println("If You are adding this Block to a specific branch(left or right), please enter the branch number(0 or 1), otherwise just press the return key");
@@ -81,10 +82,9 @@ public class Tester {
 			break;
 			case 3: {
 				System.out.println("Enter the condition you want to verify?");
-				scan.nextLine();
 				String conds = scan.nextLine();
+				if(c.equals("y"))conds=conds+"	}";
 				ConditionalBlock x = new ConditionalBlock(conds);
-				//	l.inserthead(x);
 				System.out.println("If You are adding this Block to a specific branch(left or right), please enter the branch number(0 or 1), otherwise just press the return key");
 				String s=scan.nextLine();
 				if(s.equals("")) l.InsertAfter(n,x,0);
@@ -95,17 +95,12 @@ public class Tester {
 			break;
 			case 4: {
 				System.out.println("Ending Prog");
-				scan.nextLine();
-				ender=1;
-				String process = scan.nextLine();
+				String process="";
+				if(c.equals("y"))process=process+"	}";
 				EndNode x = new EndNode(process);
-				//	l.inserthead(x);
-				System.out.println("If You are adding this Block to a specific branch(left or right), please enter the branch number(0 or 1), otherwise just press the return key");
-				String s=scan.nextLine();
-				if(s.equals("")) l.InsertAfter(n,x,0);
-				else {int a=Integer.parseInt(s);
-					l.InsertAfter(n,x,a);
-				}
+					l.InsertAfter(n,x,1);
+					l.write();
+					ender=1;
 			}
 			break;
 		}
